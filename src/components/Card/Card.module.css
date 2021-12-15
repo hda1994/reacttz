@@ -18,9 +18,6 @@
     padding: 20px;
 }
 .img {
-    /*border-left: 1px solid white;*/
-    /*border-right: 1px solid white;*/
-    /*border-top: 1px solid white;*/
     object-fit: cover;
     width: 100%;
     height: 100%;
@@ -28,12 +25,10 @@
 
 .imgWrapper {
     position: relative;
-    /*border-left: 1px solid white;*/
-    /*border-right: 1px solid white;*/
-    /*border-top: 1px solid white;*/
 }
 
 .imgFrontground {
+    color: white;
     position: absolute;
     display: none;
     top: 0;
@@ -44,7 +39,12 @@
 }
 .wrapper:hover .imgFrontground, .imgFrontground.check {
     display: flex;
+    flex-wrap: wrap;
 }
-/*.imgFrontground.check {*/
-/*    display: flex;*/
-/*}*/
+.check, .delete {
+    flex: 1 1 50%;
+}
+.view {
+    flex: 1 1 100%;
+    text-align: center;
+}

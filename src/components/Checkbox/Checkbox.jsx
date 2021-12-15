@@ -3,14 +3,23 @@ import style from './Checkbox.module.css';
 import {Context} from "../../index";
 import {useContext} from "react";
 
-const Checkbox = observer(({id, checked}) => {
+
+const Checkbox = observer(({id, checked, className}) => {
     const {data} = useContext(Context);
     const handleChange = () => {
         data.toggleCheckItem(id);
     }
     return (
-        <input type="checkbox" checked={checked} onChange={handleChange}/>
+        <div className={className}>
+            <label
+                className={[
+                    style.container,
+                    `${checked ? style.checked : ''}`
+                ].join(' ')}>
+                <input type="checkbox" className={style.input} checked={checked} onChange={handleChange}/>
+                <span className={style.checkmark}/>
+            </label>
+        </div>
     );
-})
-
+});
 export default Checkbox;

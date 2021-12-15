@@ -17,13 +17,12 @@ const Card = observer(({name, sampleUrl, height, width, onClick, checked, id}) =
             <div className={style.imgWrapper}>
                 <img className={style.img} src={sampleUrl} alt={name}/>
                 <div className={`${style.imgFrontground} ${checked? style.check:''}`}>
-                    <div>{checked ? 'da' : 'net'}</div>
-                    <div>{id}</div>
-                    <div onClick={handleDelete}>Delete</div>
-                    <Checkbox checked={checked} id={id}/>
+                    <Checkbox className={style.check} checked={checked} id={id}/>
+                    <div className={style.delete} onClick={handleDelete}>Delete</div>
+                    <div className={style.view}>{checked ? 'da' : 'net'}</div>
                 </div>
             </div>
-            <div className={style.name}>{name}</div>
+            <div className={style.name}>{name}  {id}</div>
 
         </div>
     );
