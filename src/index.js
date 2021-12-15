@@ -1,8 +1,8 @@
 import React, {createContext} from 'react';
 import ReactDOM from 'react-dom';
-// import './index.css';
+import './style/reset.css';
+import './style/variables.css';
 import App from './components/App/App';
-import reportWebVitals from './reportWebVitals';
 import Data from "./store/data";
 
 export const Context = createContext(null);
@@ -18,4 +18,3 @@ ReactDOM.render(
     document.getElementById('root')
 );
 
-reportWebVitals();
