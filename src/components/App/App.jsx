@@ -2,7 +2,7 @@ import {observer} from 'mobx-react-lite';
 import Page from "../Page/Page";
 import style from './App.module.css';
 import Footer from "../Footer/Footer";
-import {useCallback, useContext, useEffect} from "react";
+import {useContext, useEffect} from "react";
 import {Context} from "../../index";
 
 const App = observer(() => {

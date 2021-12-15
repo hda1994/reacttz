@@ -14,9 +14,8 @@ const Page = observer(() => {
             <div className={style.container}>
                 {data.data.map((elem, index) =>
                     <Card
-                        // onClick={() => data.removeItem(index)}
-                        key={elem.id}
                         {...elem}
+                        key={elem.id}
                         sampleUrl={elem.sample_url}/>)}
             </div>
         </div>
