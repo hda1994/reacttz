@@ -39,7 +39,7 @@ const Pagination = observer(() => {
             <ul>
                 {prevPage()}
                 {pageNumbers.map(number =>
-                    <li>
+                    <li key={number}>
                         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                         <a href="#"
                            onClick={(e) => {
