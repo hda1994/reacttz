@@ -1,0 +1,23 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.number {
+    margin: 0 14px;
+    padding-top: 2px;
+    display: block;
+    text-align: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    background: green;
+}
+
+.active.number {
+    background: red;
+}
+.arrow {
+    margin: 0 14px;
+}
