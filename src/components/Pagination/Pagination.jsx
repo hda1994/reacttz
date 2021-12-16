@@ -38,7 +38,7 @@ const Pagination = observer(() => {
         <ul className={style.wrapper}>
             {prevPage()}
             {pageNumbers.map(number =>
-                <li className={`${style.number} ${number === data.currentPage ? style.active : ''}`}>
+                <li key={number} className={`${style.number} ${number === data.currentPage ? style.active : ''}`}>
                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                     <a href="#"
                        onClick={(e) => {
@@ -49,6 +49,7 @@ const Pagination = observer(() => {
             )}
             {nextPage()}
         </ul>
+
     );
 })
 

@@ -5,7 +5,6 @@ import Footer from "../Footer/Footer";
 import React, {useContext, useEffect} from "react";
 import {Context} from "../../index";
 import Pagination from "../Pagination/Pagination";
-import {ending} from "../../lib/ending";
 import Header from "../Header/Header";
 
 const App = observer(() => {

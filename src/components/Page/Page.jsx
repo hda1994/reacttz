@@ -3,7 +3,6 @@ import {useContext} from "react";
 import {Context} from "../../index";
 import Card from "../Card/Card";
 import style from './Page.module.css'
-import {ending} from "../../lib/ending";
 
 const Page = observer(() => {
     const {data} = useContext(Context);

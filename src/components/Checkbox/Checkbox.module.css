@@ -7,10 +7,6 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    /*font-size: var(--font-size-body);*/
-    /*line-height: var(--font-line-height-body);*/
-    /*font-weight: var(--font-weight-regular);*/
-    /*color: var(--neutral-color-600);*/
 }
 
 /* Hide the browser's default checkbox */
