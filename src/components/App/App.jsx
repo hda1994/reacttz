@@ -2,9 +2,11 @@ import {observer} from 'mobx-react-lite';
 import Page from "../Page/Page";
 import style from './App.module.css';
 import Footer from "../Footer/Footer";
-import {useContext, useEffect} from "react";
+import React, {useContext, useEffect} from "react";
 import {Context} from "../../index";
 import Pagination from "../Pagination/Pagination";
+import {ending} from "../../lib/ending";
+import Header from "../Header/Header";
 
 const App = observer(() => {
     const {data} = useContext(Context);
@@ -22,11 +24,16 @@ const App = observer(() => {
     }, []);
 
     return (
-        <div className={style.wrapper}>
-            <Page/>
-            <Pagination/>
+        <React.Fragment>
+            <div className={style.wrapper}>
+                <div className={style.container}>
+                    <Header/>
+                    <Page/>
+                    <Pagination/>
+                </div>
+            </div>
             <Footer/>
-        </div>
+        </React.Fragment>
     );
 })
 
