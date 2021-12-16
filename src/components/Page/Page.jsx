@@ -8,19 +8,13 @@ import {ending} from "../../lib/ending";
 const Page = observer(() => {
     const {data} = useContext(Context);
 
-// console.log(data.currentData);
-
     return (
-        <div className={style.wrapper}>
-            <div>{`${data.totalItems} ${ending(data.totalItems)}`}</div>
-
-            <div className={style.container}>
-                {data.currentData.map((elem, index) =>
-                    <Card
-                        {...elem}
-                        key={elem.id}
-                        sampleUrl={elem.sample_url}/>)}
-            </div>
+        <div className={style.container}>
+            {data.currentData.map(elem =>
+                <Card
+                    {...elem}
+                    key={elem.id}
+                    sampleUrl={elem.sample_url}/>)}
         </div>
     );
 })

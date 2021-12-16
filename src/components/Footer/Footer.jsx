@@ -6,9 +6,6 @@ import {ending} from "../../lib/ending";
 
 const Footer = observer(({id, checked}) => {
     const {data} = useContext(Context);
-    const handleChange = () => {
-        data.toggleCheckItem(id);
-    }
     const handleClick = () => {
         data.removeCheckedItems();
     }
