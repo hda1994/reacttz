@@ -8,23 +8,50 @@ export default class Data {
             elem.id = index;
             return elem
         });
+        this._currentData = [];
+        this._itemsPerPage = 6;
+        this._currentPage = 1;
         makeAutoObservable(this);
     }
 
-    setData(data) {
-        this._data = data;
+    get lastPageIndex() {
+        return this._currentPage * this._itemsPerPage;
+    }
+
+    get firstPageIndex() {
+        return (this._currentPage - 1) * this._itemsPerPage;
+    }
+
+    get itemsPerPage() {
+        return this._itemsPerPage;
+    }
+
+    get currentPage() {
+        return this._currentPage;
+    }
+
+    get totalItems() {
+        return this._data.length;
     }
 
     get data() {
         return this._data;
     }
 
-    getItem(id) {
-        return this._data.filter(elem => elem.id === id)[0]
+    get currentData() {
+        return this._data.slice(this.firstPageIndex, this.lastPageIndex);
     }
 
-    getTotalCount() {
-        return this._data.length;
+    setCurrentPage(number) {
+        this._currentPage = number;
+    }
+
+    setData(data) {
+        this._data = data;
+    }
+
+    getItem(id) {
+        return this._data.find(elem => elem.id === id)
     }
 
     getCheckedCount() {
