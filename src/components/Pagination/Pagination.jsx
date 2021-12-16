@@ -14,7 +14,7 @@ const Pagination = observer(() => {
             return null;
         }
         return (
-            <li>
+            <li className={style.arrow}>
                 <a href="#" onClick={(e) => {
                     e.preventDefault();
                     data.setCurrentPage(data.currentPage - 1);
@@ -26,7 +26,7 @@ const Pagination = observer(() => {
             return null;
         }
         return (
-            <li>
+            <li className={style.arrow}>
                 <a href="#" onClick={(e) => {
                     e.preventDefault();
                     data.setCurrentPage(data.currentPage + 1);
@@ -35,22 +35,21 @@ const Pagination = observer(() => {
     }
 
     return (
-        <nav>
-            <ul>
-                {prevPage()}
-                {pageNumbers.map(number =>
-                    <li key={number}>
-                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                        <a href="#"
-                           onClick={(e) => {
-                               e.preventDefault();
-                               data.setCurrentPage(number);
-                           }}>{number}</a>
-                    </li>
-                )}
-                {nextPage()}
-            </ul>
-        </nav>
+        <ul className={style.wrapper}>
+            {prevPage()}
+            {pageNumbers.map(number =>
+                <li key={number} className={`${style.number} ${number === data.currentPage ? style.active : ''}`}>
+                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                    <a href="#"
+                       onClick={(e) => {
+                           e.preventDefault();
+                           data.setCurrentPage(number);
+                       }}>{number}</a>
+                </li>
+            )}
+            {nextPage()}
+        </ul>
+
     );
 })
 
