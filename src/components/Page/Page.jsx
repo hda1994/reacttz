@@ -8,12 +8,14 @@ import {ending} from "../../lib/ending";
 const Page = observer(() => {
     const {data} = useContext(Context);
 
+// console.log(data.currentData);
+
     return (
         <div className={style.wrapper}>
-            <div>{`${data.getTotalCount()} ${ending(data.getTotalCount())}`}</div>
+            <div>{`${data.totalItems} ${ending(data.totalItems)}`}</div>
 
             <div className={style.container}>
-                {data.data.map((elem, index) =>
+                {data.currentData.map((elem, index) =>
                     <Card
                         {...elem}
                         key={elem.id}
