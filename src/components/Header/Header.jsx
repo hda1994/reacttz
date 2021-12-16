@@ -7,7 +7,7 @@ import {ending} from "../../lib/ending";
 const Header = observer(({id, checked}) => {
     const {data} = useContext(Context);
     return (
-        <header>
+        <header className={style.header}>
             <div>{`${data.totalItems} ${ending(data.totalItems)}`}</div>
         </header>
 
