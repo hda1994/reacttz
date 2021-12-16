@@ -2,21 +2,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 14px 0;
 }
 
 .number {
     margin: 0 14px;
-    padding-top: 2px;
+    padding-top: 3px;
     display: block;
     text-align: center;
     width: 24px;
     height: 24px;
     border-radius: 12px;
-    background: green;
+    background: #b2b2b2;
+    color: #3c3c3c;
 }
 
 .active.number {
-    background: red;
+    color: #f1f1f1;
+    background: #525252;
 }
 .arrow {
     margin: 0 14px;

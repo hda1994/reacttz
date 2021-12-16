@@ -11,7 +11,10 @@
     display: flex;
     flex-direction: column;
 }
-
+a, a:visited, a:hover {
+    text-decoration: none;
+    color: inherit;
+}
 /* Выставляем основные настройки по-умолчанию для body */
 body {
     min-height: 100vh;
