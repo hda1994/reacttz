@@ -29,6 +29,7 @@
 }
 
 .imgFrontground {
+    padding: 20px;
     color: white;
     position: absolute;
     display: none;
