@@ -4,6 +4,7 @@ import {Context} from "../../index";
 import {useContext} from "react";
 import Checkbox from "../Checkbox/Checkbox";
 import Delete from "../Delete/Delete";
+import {ReactComponent as ViewSVG} from '../../assets/svg/view.svg';
 
 const Card = observer(({name, sampleUrl, height, width, onClick, checked, id}) => {
     const {data} = useContext(Context);
@@ -18,10 +19,12 @@ const Card = observer(({name, sampleUrl, height, width, onClick, checked, id}) =
                 <div className={`${style.imgFrontground} ${checked ? style.check : ''}`}>
                     <Checkbox className={style.check} checked={checked} id={id}/>
                     <Delete onClick={handleDelete} className={style.delete} color={'#ffffff'}/>
-                    <div className={style.view}>{checked ? 'da' : 'net'}</div>
+                    <div className={style.view}>
+                        <ViewSVG fill={'#ffffff'} style={{height: '24px', width: '24px'}}/>
+                    </div>
                 </div>
             </div>
-            <div className={style.name}>{name} {id}</div>
+            <div className={style.name}>{name}</div>
         </div>
     );
 })
