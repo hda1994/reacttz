@@ -11,3 +11,20 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.round {
+    background: green;
+    display: inline-block;
+    padding: 6px;
+    border-radius: 10px;
+}
+
+.toggleCheck {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    border-radius: 12px;
+    margin-right: 6px;
+    border: 2px solid #000000;
+}

@@ -14,7 +14,12 @@ const Footer = observer(() => {
     return (
         <footer className={style.footer}>
             <div className={style.wrapper}>
-                <div>{`${data.getCheckedCount()} ${ending(data.getCheckedCount())} выбрано`}</div>
+                <div>
+                    <span className={style.toggleCheck}
+                          onClick={() => data.toggleCheckAll()}>{data.checkedType ? '+' : '-'}</span>
+                    <span className={style.round}>{`${data.getCheckedCount()}`}</span>
+                    {` ${ending(data.getCheckedCount())} выбрано`}
+                </div>
                 <Delete onClick={handleClick}/>
                 <div>Для отмены нажмите Esc</div>
             </div>
