@@ -3,6 +3,7 @@ import style from './Card.module.css';
 import {Context} from "../../index";
 import {useContext} from "react";
 import Checkbox from "../Checkbox/Checkbox";
+import Delete from "../Delete/Delete";
 
 const Card = observer(({name, sampleUrl, height, width, onClick, checked, id}) => {
     const {data} = useContext(Context);
@@ -16,7 +17,7 @@ const Card = observer(({name, sampleUrl, height, width, onClick, checked, id}) =
                 <img className={style.img} src={sampleUrl} alt={name}/>
                 <div className={`${style.imgFrontground} ${checked ? style.check : ''}`}>
                     <Checkbox className={style.check} checked={checked} id={id}/>
-                    <div className={style.delete} onClick={handleDelete}>Delete</div>
+                    <Delete onClick={handleDelete} className={style.delete} color={'#ffffff'}/>
                     <div className={style.view}>{checked ? 'da' : 'net'}</div>
                 </div>
             </div>
