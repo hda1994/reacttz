@@ -6,6 +6,7 @@ import React, {useContext, useEffect} from "react";
 import {Context} from "../../index";
 import Pagination from "../Pagination/Pagination";
 import Header from "../Header/Header";
+import {addTestImages} from "../../lib/addTestImages";
 
 const App = observer(() => {
     const {data} = useContext(Context);
@@ -14,6 +15,12 @@ const App = observer(() => {
             data.unCheckedAll();
         }
     };
+
+    // можно добавить тестовые изображения с https://jsonplaceholder.typicode.com/photos
+    // useEffect(() => {
+    //     addTestImages(data);
+    // }, []);
+
 
     useEffect(() => {
         document.addEventListener("keydown", escFunction, false);

@@ -1,5 +1,5 @@
 export const ending = count => {
-    switch (count) {
+    switch (count % 100) {
         case 1:
             return 'изображение'
         case 2:
