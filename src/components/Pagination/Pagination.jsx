@@ -18,7 +18,7 @@ const Pagination = observer(() => {
                 <a href="#" onClick={(e) => {
                     e.preventDefault();
                     data.setCurrentPage(data.currentPage - 1);
-                }}>{'<prev'}</a>
+                }}>{'<'}</a>
             </li>)
     }
     const nextPage = () => {
@@ -30,7 +30,7 @@ const Pagination = observer(() => {
                 <a href="#" onClick={(e) => {
                     e.preventDefault();
                     data.setCurrentPage(data.currentPage + 1);
-                }}>{'next>'}</a>
+                }}>{'>'}</a>
             </li>)
     }
 
