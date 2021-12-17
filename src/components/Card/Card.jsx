@@ -16,7 +16,7 @@ const Card = observer(({name, sampleUrl, height, width, onClick, checked, id}) =
         <div className={style.wrapper}>
             <div className={style.imgWrapper}>
                 <img className={style.img} src={sampleUrl} alt={name}/>
-                <div className={`${style.imgFrontground} ${checked ? style.check : ''}`}>
+                <div className={`${style.imgFrontground} ${checked ? style.checked : ''}`}>
                     <Checkbox className={style.check} checked={checked} id={id}/>
                     <Delete onClick={handleDelete} className={style.delete} color={'#ffffff'}/>
                     <div className={style.view}>

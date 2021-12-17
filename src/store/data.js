@@ -8,10 +8,14 @@ export default class Data {
             elem.id = index;
             return elem
         });
-        this._currentData = [];
+        this._checkedType = true;
         this._itemsPerPage = 6;
         this._currentPage = 1;
         makeAutoObservable(this);
+    }
+
+    get checkedType() {
+        return this._checkedType;
     }
 
     get lastPageIndex() {
@@ -72,11 +76,29 @@ export default class Data {
         )
     }
 
+    toggleCheckAll() {
+        if (this._checkedType) {
+            this.checkedAll();
+        } else {
+            this.unCheckedAll();
+        }
+        this._checkedType = !this._checkedType;
+    }
+
     unCheckedAll() {
         this._data = this._data.map(elem => {
                 return {...elem, checked: false}
             }
         )
+        this._checkedCount = 0;
+    }
+
+    checkedAll() {
+        this._data = this._data.map(elem => {
+                return {...elem, checked: true}
+            }
+        )
+        this._checkedCount = this._data.length;
     }
 
 }
