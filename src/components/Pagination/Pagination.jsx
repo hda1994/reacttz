@@ -22,7 +22,7 @@ const Pagination = observer(() => {
             </li>)
     }
     const nextPage = () => {
-        if (data.currentPage === Math.ceil(data.totalItems / data.itemsPerPage || data.data.length === 0)) {
+        if (data.currentPage === Math.ceil(data.totalItems / data.itemsPerPage) || data.data.length === 0) {
             return null;
         }
         return (
@@ -37,16 +37,19 @@ const Pagination = observer(() => {
     return (
         <ul className={style.wrapper}>
             {prevPage()}
-            {pageNumbers.map(number =>
-                <li key={number} className={`${style.number} ${number === data.currentPage ? style.active : ''}`}>
-                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                    <a href="#"
-                       onClick={(e) => {
-                           e.preventDefault();
-                           data.setCurrentPage(number);
-                       }}>{number}</a>
-                </li>
-            )}
+            {pageNumbers.filter(num => num === 1
+                || Math.abs(num - data.currentPage) <= 4
+                || num === Math.ceil(data.totalItems / data.itemsPerPage))
+                .map(number =>
+                    <li key={number} className={`${style.number} ${number === data.currentPage ? style.active : ''}`}>
+                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                        <a href="#"
+                           onClick={(e) => {
+                               e.preventDefault();
+                               data.setCurrentPage(number);
+                           }}>{number}</a>
+                    </li>
+                )}
             {nextPage()}
         </ul>
 
