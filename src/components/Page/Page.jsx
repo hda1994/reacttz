@@ -19,4 +19,3 @@ const Page = observer(() => {
 })
 
 export default Page;
-

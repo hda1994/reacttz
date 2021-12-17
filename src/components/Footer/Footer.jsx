@@ -10,6 +10,7 @@ const Footer = observer(() => {
     const handleClick = () => {
         data.removeCheckedItems();
     }
+
     return (
         <footer className={style.footer}>
             <div className={style.wrapper}>

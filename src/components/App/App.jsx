@@ -21,7 +21,6 @@ const App = observer(() => {
     //     addTestImages(data);
     // }, []);
 
-
     useEffect(() => {
         document.addEventListener("keydown", escFunction, false);
         return () => {

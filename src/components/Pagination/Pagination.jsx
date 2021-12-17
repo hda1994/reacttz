@@ -10,6 +10,7 @@ const Pagination = observer(() => {
     for (let i = 1; i <= Math.ceil(data.totalItems / data.itemsPerPage); i++) {
         pageNumbers.push(i);
     }
+
     const prevPage = () => {
         if (data.currentPage === 1 || data.data.length === 0) {
             return null;
@@ -60,7 +61,6 @@ const Pagination = observer(() => {
                 )}
             {nextPage()}
         </ul>
-
     );
 })
 
