@@ -47,8 +47,8 @@
 
 .container.checked .checkmark:after {
     display: block;
-    left: 3px;
-    top: 0;
+    left: 4px;
+    top: 1px;
     width: 4px;
     height: 8px;
     border: solid white;
